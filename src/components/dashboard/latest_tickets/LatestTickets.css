@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto&family=Roboto+Slab:wght@100..900&family=Syne:wght@600&display=swap');
+
+
+.admin-dashboard-latest-tickets{
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    font-family: "Roboto Slab", serif;
+    /* align-items: center; */
+    /* background-color: purple; */
+    /* width: 400px; */
+}
+
+.admin-dashboard-latest-tickets h6{
+    align-self: flex-start;
+}
+
+.each-latest-ticket{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.ticket-content{
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.left-elt{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;    
+}
+
+.left-elt-desc{
+    font-size: 13px;
+}
+
+.ticket-serial{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    align-content: center;
+}
+
+.admin-dltb{
+    margin-top: 10px;
+    border: none;
+    background-color: #b4b4b4;
+    color: white;
+    height: 40px;
+}

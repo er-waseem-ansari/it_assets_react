@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto&family=Roboto+Slab:wght@100..900&family=Syne:wght@600&display=swap');
+
+
+.calender{
+    display: flex;
+    font-family: "Roboto Slab", serif;
+    /* flex-direction: ; */
+}
+.date-block{
+    height: 60px;
+    width: 60px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-date-block{
+    background-color: #b4b4b4;
+}

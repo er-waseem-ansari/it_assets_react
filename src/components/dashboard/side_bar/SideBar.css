@@ -1,0 +1,57 @@
+.sidebar {
+  height: 100%;
+  width: 250px; /* Initial width */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  transition: width 0.5s; /* Only transition width */
+  padding-top: 20px;
+  white-space: nowrap;
+}
+
+.sidebar.mini {
+  width: 85px; /* Collapsed width */
+}
+
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  /* color: #f1f1f1; */
+  background-color: white;
+}
+
+.material-icons,
+.icon-text {
+  vertical-align: middle;
+}
+
+.material-icons {
+  padding-bottom: 3px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+  margin-left: 250px; /* Initial margin */
+}
+
+.sidebar.mini + #main {
+  margin-left: 85px; /* Adjusted margin when sidebar is collapsed */
+}
+
+.it-assets-logo{
+  height: 60px;
+  margin-left: 20px;
+
+}

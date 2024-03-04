@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto&family=Roboto+Slab:wght@100..900&family=Syne:wght@600&display=swap');
+
+.big-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 7vw 10px 5vw;
+    font-family: "Roboto Slab", serif;
+}
+.big-nav-left{
+    display: flex;
+    border:  1px solid black;
+    box-sizing: border-box;
+    width: 50vw;
+}
+.big-nav-left input{
+    width: 100%;
+    border: none;
+    height: 35px;
+    padding: 10px;
+    outline: none;
+}
+
+.big-nav-left button{
+    border: none;
+    background-color: white;
+}
