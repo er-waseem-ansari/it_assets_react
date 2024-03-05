@@ -1,5 +1,6 @@
 import React from 'react'
 import './WelcomePanel.css'
+import { Link } from 'react-router-dom'
 
 function WelcomePanel() {
   return (
@@ -9,7 +10,8 @@ function WelcomePanel() {
             <span>Navigate and monitor your asset management progress.</span>
         </div>
         <div className='welcome-right'>
-            <button className='add-asset-button'>+ Add asset</button>
+          <Link to={'/categories'}><button className='add-asset-button'>+ Add asset</button></Link>
+            
         </div>
     </div>
   )

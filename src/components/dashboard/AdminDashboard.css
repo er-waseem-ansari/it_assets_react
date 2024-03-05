@@ -14,24 +14,31 @@
     width: 30vw;
 }
 
-/* .admin-side-panel{
-    height: 100vh;
-    width: 100px;
-    background-color: #f0f0f0;
-} */
-
-.admin-dashboard-main-body{
+/* .admin-dashboard-main-body{
    margin-left: 5vw;
    margin-right: 6vw;
     
-}
+} */
 
 .admin-main-panel{
-    width: 100%;
-    margin-left: 5vw;
+    
+    padding-left: 9vw;
+    padding-right: 5vw;
+    width: 100vw;
+    align-items: center;
+    position: fixed;
 }
 
 .admin-dashboard-main-body{
     display: flex;
     justify-content: space-between;
+    height: 100vh;
+    /* padding-left: 5vw; */
+    /* padding-right: 5vw; */
+    
+}
+.category-table{
+    width: 70vw;
+    /* background-color: purple; */
+    padding-top: 20px;
 }

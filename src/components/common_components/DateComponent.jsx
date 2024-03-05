@@ -17,7 +17,7 @@ const DateComponent = () => {
   }
 
   return (
-    <div className="">
+    <div style={{width: "100%"}}>
       <h6>Current Date</h6>
       <div className="calender">
       {myCalender.map((date, index) => (

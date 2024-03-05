@@ -3,7 +3,7 @@
 .big-nav{
     display: flex;
     justify-content: space-between;
-    padding: 10px 7vw 10px 5vw;
+    padding: 10px 0 10px 0;
     font-family: "Roboto Slab", serif;
 }
 .big-nav-left{

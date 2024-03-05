@@ -4,6 +4,8 @@
 .calender{
     display: flex;
     font-family: "Roboto Slab", serif;
+    width: 100%;
+    justify-content: space-between;
     /* flex-direction: ; */
 }
 .date-block{
