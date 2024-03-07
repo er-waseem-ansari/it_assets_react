@@ -59,12 +59,22 @@
     padding: 10px;
 }
 
-.right form button{
+.form-submit-button{
     width: 100%;
     background-color: black;
     color: white;
     border: none;
     height: 35px;
+}
+
+.form-change-button{
+    border: none;
+    background-color: transparent;
+}
+
+.right form p{
+    text-align: center;
+    margin-top: 10px;
 }
 
 .logo-top{

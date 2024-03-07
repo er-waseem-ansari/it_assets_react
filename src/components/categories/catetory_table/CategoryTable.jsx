@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Button } from '@mui/material';
+import './CategoryTable.css'
+
 
 function createData(id, name, type, available, total) {
   return { id, name, type , available, total };
@@ -26,7 +28,7 @@ const rows = [
 export default function CategoryTable() {
   return (
     // <div style={{ height: '500px', overflowY: 'auto' }}>
-    <>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
     <h3>Categories</h3>
     <br />
     <TableContainer component={Paper}>
@@ -58,7 +60,7 @@ export default function CategoryTable() {
       <Button  type="submit" color="primary" sx={ { borderRadius: 0, color: 'black', backgroundColor: "#b4b4b4"} }>Create new category</Button>
       </div>
     </TableContainer>
-    </>
+    </div>
     // </div>
   );
 }

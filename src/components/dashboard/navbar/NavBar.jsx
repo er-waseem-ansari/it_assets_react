@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './NavBar.css'
 import "bootstrap-icons/font/bootstrap-icons.css";
+import AuthContext from '../../../context/AuthContext';
 function NavBar() {
+  const [name, setName] = useState("")
+  // const {auth} = useContext(AuthContext)
+  // useEffect(()=>{
+  //   setName(auth.firstName + " " + auth.lastName)
+  // })
   return (
     <div className='big-nav'>
           <div className="big-nav-left">
@@ -11,7 +17,7 @@ function NavBar() {
 
           <div className="big-nav-right">
           <i className="bi bi-person-circle"></i>
-            Waseem Ansari
+            {name}
           </div>
             
     </div>

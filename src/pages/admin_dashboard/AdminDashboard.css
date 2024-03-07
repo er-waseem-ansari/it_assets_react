@@ -2,17 +2,7 @@
     display: flex;
 }
 
-.admin-dashboard-left-body{
-    width: 50vw;
-    /* padding-left: 50px; */
-    padding-top: 10px;
-}
 
-.admin-dashboard-right-body{
-    /* padding-right: 50px; */
-    padding-top: 10px;
-    width: 30vw;
-}
 
 /* .admin-dashboard-main-body{
    margin-left: 5vw;
@@ -36,9 +26,4 @@
     /* padding-left: 5vw; */
     /* padding-right: 5vw; */
     
-}
-.category-table{
-    width: 70vw;
-    /* background-color: purple; */
-    padding-top: 20px;
 }

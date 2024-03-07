@@ -1,0 +1,11 @@
+.admin-dashboard-left-body{
+    width: 50vw;
+    /* padding-left: 50px; */
+    padding-top: 10px;
+}
+
+.admin-dashboard-right-body{
+    /* padding-right: 50px; */
+    padding-top: 10px;
+    width: 30vw;
+}
