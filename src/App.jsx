@@ -8,6 +8,9 @@ import SideBar from "./components/dashboard/side_bar/SideBar";
 import {Outlet, RouterProvider, createBrowserRouter} from 'react-router-dom'
 import AuthContextProvider from "./context/AuthContextProvider";
 import AdminHome from "./components/dashboard/admin_home/AdminHome";
+import ListAvailableAsset from "./components/Employee/AvailableAssets/ListAvailableAsset";
+import Listcategory from "./components/Employee/Category/Listcategory";
+import RaiseTicket from "./components/Employee/EmployeeTickets/RaiseTicket";
 
 
 function App() {
@@ -27,9 +30,28 @@ function App() {
         {
           path: 'categories',
           element: <CategoryTable/>
+        },
+        {
+          path:'show/:id',
+          element:<ListAvailableAsset/>
+        },
+        {
+          path:'category',
+          element:<Listcategory/>
+        },
+        {
+          path:'raise-ticket/:id',
+          element:<RaiseTicket/>
         }
+        
+         
+        
       ]
-    }
+     
+    },
+    
+    
+    
 ])
   
 
