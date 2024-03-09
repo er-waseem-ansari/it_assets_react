@@ -8,6 +8,7 @@ import SideBar from "./components/dashboard/side_bar/SideBar";
 import {Outlet, RouterProvider, createBrowserRouter} from 'react-router-dom'
 import AuthContextProvider from "./context/AuthContextProvider";
 import AdminHome from "./components/dashboard/admin_home/AdminHome";
+import ListAvailableAssets from "./components/dashboard/list_available_assets/ListAvailableAssets";
 
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
         {
           path: 'categories',
           element: <CategoryTable/>
+        },
+        {
+          path: 'availableassets',
+          element: <ListAvailableAssets/>
         }
       ]
     }

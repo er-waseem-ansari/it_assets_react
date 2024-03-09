@@ -2,7 +2,7 @@ import React from 'react'
 import { BarChart } from '@mui/x-charts/BarChart';
 import './BarGraph.css'
 function BarGraph() {
-    
+  
   return (
     <>
     <h6>Asset Inventory</h6>

@@ -93,3 +93,9 @@
 .logo-top span{
     font-size: small;
 }
+.validation-message{
+    color: rgb(218, 0, 0);
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
