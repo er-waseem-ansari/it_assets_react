@@ -36,9 +36,9 @@ const SideBar = () => {
       <a href="#"><WidgetsIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;services</a><br />
       <a href="#"><CategoryIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;clients</a><br />
       <a href="#"><ContactPageIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact</a>
-      <Link to={'/auth'}>
-        <button onClick={logout}>Logout</button>
-      </Link>
+      <Link to={'/auth'}><button onClick={logout}>Logout</button></Link>
+      <Link to={"/show"}>Available assets</Link>
+      <Link to={"/category"}>Category</Link>
     </div>
   );
 };

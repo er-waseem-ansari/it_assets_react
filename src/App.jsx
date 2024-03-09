@@ -9,7 +9,8 @@ import {Outlet, RouterProvider, createBrowserRouter} from 'react-router-dom'
 import AuthContextProvider from "./context/AuthContextProvider";
 import AdminHome from "./components/dashboard/admin_home/AdminHome";
 import ListAvailableAssets from "./components/dashboard/list_available_assets/ListAvailableAssets";
-
+import Listcategory from "./components/Employee/Category/Listcategory";
+import RaiseTicket from "./components/Employee/EmployeeTickets/RaiseTicket";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,11 +31,26 @@ function App() {
           element: <CategoryTable/>
         },
         {
-          path: 'availableassets',
-          element: <ListAvailableAssets/>
+          path:'show/:id',
+          element:<ListAvailableAssets/>
+        },
+        {
+          path:'category',
+          element:<Listcategory/>
+        },
+        {
+          path:'raise-ticket/:id',
+          element:<RaiseTicket/>
         }
+        
+         
+        
       ]
-    }
+     
+    },
+    
+    
+    
 ])
   
 
