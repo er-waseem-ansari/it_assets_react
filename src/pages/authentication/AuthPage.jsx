@@ -40,6 +40,10 @@ export const AuthPage = () => {
     const { setAuth } = useContext(AuthContext)
     const navigate = useNavigate()
 
+    toast.configure;
+    const notify = () => toast.success("Account creation successful! Please Login", { autoClose: 3000 });
+    const invalidCredentialsToast = () => toast.success("Invalid Credentials!", { autoClose: 3000 });
+    const internetIssueToast = () => toast.success("Please connect to internet first", { autoClose: 3000 });
     useEffect(() => {
         if (firstName.length > 2 || firstName.length == 0) {
             setIsFirstNameValid(true);
@@ -152,7 +156,25 @@ export const AuthPage = () => {
                     const lastName = response.data.lastName
                     const employeeId = response.data.employeeId
                     setAuth({ jwtToken, role, email, firstName, lastName, employeeId });
-                    navigate('/')
+                    role==="ADMIN" ? navigate('/admin') : navigate('/employee')
+                })
+                .catch((error)=>{
+                    if (error.response) {
+                        // Server responded with a status code outside of 2xx range
+                        console.error("Server error:", error.response.data);
+                        invalidCredentialsToast()
+                        // Handle server errors
+                    } else if (error.request) {
+                        // The request was made but no response was received
+                        console.error("Network error waseem:", error.request);
+                        
+                        internetIssueToast()
+                        // Handle network errors
+                    } else {
+                        // Something happened in setting up the request that triggered an error
+                        console.error("Request error:", error.message);
+                        // Handle other types of errors
+                    }
                 })
         }
 
@@ -174,8 +196,7 @@ export const AuthPage = () => {
         setLastName("")
         setConfirmPassword("")
     }
-    toast.configure;
-    const notify = () => toast.success("Account creation successful! Please Login", { autoClose: 3000 });
+    
     return (
         // <div>
         <div className="outer">
@@ -234,7 +255,7 @@ export const AuthPage = () => {
                     
                     <span className='validation-message'>{formValidationMessage}</span>
                     
-                    <p>{account === "login" ? "Don't have an account?" : "Already have an account?"}<button className='form-change-button' type='' onClick={(e) => changeForm(e)} style={{ color: 'blue' }}>{account === "login" ? "Sign Up" : "Login"}</button></p>
+                    <p>{account === "login" ? "Don't have an account?" : "Already have an account?"} <button className='form-change-button' type='' onClick={(e) => changeForm(e)} style={{ color: 'blue' }}>{account === "login" ? "Sign Up" :  "Login"}</button></p>
                 
                 </form>
 

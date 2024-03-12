@@ -4,10 +4,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import AuthContext from '../../../context/AuthContext';
 function NavBar() {
   const [name, setName] = useState("")
-  // const {auth} = useContext(AuthContext)
-  // useEffect(()=>{
-  //   setName(auth.firstName + " " + auth.lastName)
-  // })
+  const {auth} = useContext(AuthContext)
+  useEffect(()=>{
+    setName(auth.firstName + " " + auth.lastName)
+  },[name])
   return (
     <div className='big-nav'>
           <div className="big-nav-left">

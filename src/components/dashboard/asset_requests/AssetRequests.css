@@ -28,7 +28,11 @@
     justify-content: space-around;
 }
 .unit-1{
-    width: 100px;
+    width: 200px;
+    
+}
+.unit-1 img {
+    margin-right: 20px;
 }
 
 .profile{
@@ -54,4 +58,5 @@
     background-color: #b4b4b4;
     height: 35px;
     color: white;
+    padding: 8px;
 }

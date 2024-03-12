@@ -17,7 +17,7 @@ function WelcomePanel() {
             <span>Navigate and monitor your asset management progress.</span>
         </div>
         <div className='welcome-right'>
-          <Link to={'/categories'}><button className='add-asset-button'>+ Add asset</button></Link>
+          <Link to={'/categories'}><button className='add-asset-button'>{auth.role === "ADMIN"? "+ Add Asset" : "Issue New Asset"}</button></Link>
             
         </div>
     </div>

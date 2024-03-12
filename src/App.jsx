@@ -11,6 +11,9 @@ import AdminHome from "./components/dashboard/admin_home/AdminHome";
 import ListAvailableAssets from "./components/dashboard/list_available_assets/ListAvailableAssets";
 import Listcategory from "./components/Employee/Category/Listcategory";
 import RaiseTicket from "./components/Employee/EmployeeTickets/RaiseTicket";
+import EmployeeHome from "./components/dashboard/employee_home/EmployeeHome";
+import AllAssetRequestsTable from "./components/dashboard/all_asset_requests_table/AllAssetRequestsTable";
+import AddAsset from "./components/dashboard/add_asset/AddAsset";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,7 +26,7 @@ function App() {
       element: <AdminDashboard/>,
       children: [
         {
-          path: '',
+          path: 'admin',
           element: <AdminHome/>
         },
         {
@@ -41,17 +44,35 @@ function App() {
         {
           path:'raise-ticket/:id',
           element:<RaiseTicket/>
+        },
+        {
+          path: 'asset-requests/all',
+          element: <AllAssetRequestsTable/>
+        },
+        {
+          path: 'add-asset/:categoryId',
+          element: <AddAsset/>
         }
-        
-         
         
       ]
      
     },
-    
-    
-    
-])
+
+    {
+      path: '/',
+      element: <AdminDashboard/>,
+      children: [
+        {
+          path: 'employee',
+          element: <EmployeeHome/>
+        },
+        {
+          path: 'categories',
+          element: <CategoryTable/>
+        }
+      ]
+    }
+  ])
   
 
   return (

@@ -22,6 +22,7 @@ const SideBar = () => {
   const logout = () =>{
     setAuth({})
   }
+
   return (
     <div
       id="mySidebar"
@@ -29,13 +30,13 @@ const SideBar = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span><img src={itAssetsLogo} alt="" className='it-assets-logo'/></span>
+      <img src={itAssetsLogo} alt="" className='it-assets-logo'/>
       <br />
       <br />
-      <a href="#"><span><AccountCircleIcon/><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;about</span></span></a><br />
-      <a href="#"><WidgetsIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;services</a><br />
-      <a href="#"><CategoryIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;clients</a><br />
-      <a href="#"><ContactPageIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact</a>
+      <a href="#"><span><AccountCircleIcon/><span className="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About</span></span></a><br />
+      <a href="#"><WidgetsIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Services</a><br />
+      <a href="#"><CategoryIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clients</a><br />
+      <a href="#"><ContactPageIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact</a>
       <Link to={'/auth'}><button onClick={logout}>Logout</button></Link>
       <Link to={"/show"}>Available assets</Link>
       <Link to={"/category"}>Category</Link>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './AssetRequests.css'
 import AuthContext from '../../../context/AuthContext'
 import TicketService from '../../../services/ticket_service/TicketService'
+import { Link } from 'react-router-dom'
 function AssetRequests() {
     const [activeAssetRequests, setActiveAssetRequests] = useState([])
     const { auth } = useContext(AuthContext)
@@ -45,7 +46,7 @@ function AssetRequests() {
                     ))
                 }
 
-                <div className='view-all-div'><button>View All Request</button></div>
+                <div className='view-all-div'><Link to={'/asset-requests/all'}><button>View All Request</button></Link></div>
             </div>
         </div>
     )

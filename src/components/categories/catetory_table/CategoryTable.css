@@ -1,5 +1,11 @@
 .category-table{
-    width: 70vw;
+    width: 100%;
     /* background-color: purple; */
     padding-top: 20px;
+}
+
+.category-table-link{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
 }

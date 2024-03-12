@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto&family=Roboto+Slab:wght@100..900&family=Syne:wght@600&display=swap');
+*{
+    font-family: "Roboto Slab", serif;
+}
+.add-asset-container{
+    /* height: 400px; */
+    width: 900px;
+    background-color: #f0f0f0;
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 25px;
+    padding-bottom: 50px;
+}
+
+.small-image-outer-container{
+    display: flex;
+    flex-direction: column;
+
+}
+.left-add-asset-container{
+    display: flex;
+}
+.small-image{
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-image-container{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-add-asset-container{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-add-asset-container input{
+    border: none;
+    border: 2px solid #b4b4b4;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.right-add-asset-container textarea{
+    border: none;
+    border: 2px solid #b4b4b4;
+    padding: 7px;
+    border-radius: 7px;
+    width: 100%;
+    height: 120px;
+}
+
+.raac-bottom{
+    display: flex;
+    justify-content: center;
+}
+
+.raac-bottom Button{
+    width: 100%;
+    background-color: black;
+}

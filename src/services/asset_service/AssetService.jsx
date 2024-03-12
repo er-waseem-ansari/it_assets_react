@@ -2,24 +2,25 @@ import axios from "axios";
 
 const BASE_REST_API_URL = "http://localhost:8089/assets"
 
-class AuthService {
+class AssetService {
 
-    
-
-    addEmployee(employee){
-        console.log("Inside signup service and our employee object is : ", employee)
-        return (axios.post(BASE_REST_API_URL+"/signup", employee))
-    }
-
-    employeeLogin(employee){
-        console.log("Inside login service and our employee object is : ", employee)
-        const payload = {
-            "email": employee.email,
-            "password": employee.password
+    addAsset(assetObj, jwtToken){
+        const headers = {
+            "Authorization" : `Bearer ${jwtToken}`
         }
-        return axios.post(BASE_REST_API_URL+'/login', payload)
 
+        // const payload = {
+        //     "description" : assetObj.assetDescription,
+        //     "image" : "image.jpg",
+        //     "model" : assetObj.assetName,
+        //     "category" : {
+        //         "categoryId" : assetObj.categoryId
+        //     }
+        // }
+
+        console.log("Inside asset service before axios: ", assetObj)
+        return axios.post(BASE_REST_API_URL+"/add", assetObj, {headers})
     }
 }
 
-export default new AuthService();
+export default new AssetService();

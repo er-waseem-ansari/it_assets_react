@@ -1,5 +1,5 @@
 import axios from "axios";
-const GET_ALL_CATEGORY="http://localhost:8089/category/getcategory"
+const BASE_REST_URL="http://localhost:8089/category"
 
 
 class CategoryService{
@@ -8,7 +8,7 @@ class CategoryService{
         const headers = {
             "Authorization" : `Bearer ${jwtToken}`
         }
-        return axios.get(GET_ALL_CATEGORY,{headers})
+        return axios.get(BASE_REST_URL + "/all",{headers})
     }
 }
 
