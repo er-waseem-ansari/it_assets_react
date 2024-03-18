@@ -8,11 +8,11 @@ const RaiseTicket = () => {
 
     const[problemDescription,setProblemDescription]=useState('')
     const[ticketType,setTicketType]=useState('')
+    const navigate=useNavigate()
     const{auth}=useContext(AuthContext)
     // const[employeeId,setEmployeeId]=useState(auth.employeeId)
 
    const{id}=useParams()
-    const navigate = useNavigate()
     const submitTicketDetails=(e)=>{
         e.preventDefault();
         // const tickets={ticketType,description}
