@@ -3,7 +3,7 @@ import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import './AddAsset.css'
 import SmallButton from '../small_button/SmallButton';
 import AssetService from '../../../services/asset_service/AssetService';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AuthContext from '../../../context/AuthContext';
 
 
@@ -24,7 +24,7 @@ function AddAsset() {
 
     const{categoryId} = useParams()
     const{auth} = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const handleImageUpload1 = () =>{
         inputRef1.current.click();
     }
@@ -75,6 +75,7 @@ function AddAsset() {
         console.log("Before calling the service: ", assetObj)
         AssetService.addAsset(assetObj, auth.jwtToken).then((response)=>{
             console.log("Asset added response: ", response.data)
+            navigate(-1)
         }).catch((error)=>{
             console.log("this is the error" ,  error)
         })

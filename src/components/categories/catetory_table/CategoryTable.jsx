@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -15,7 +14,8 @@ import CategoryService from '../../../services/employeeService/CategoryService';
 import { useEffect } from 'react';
 import SmallButton from '../../dashboard/small_button/SmallButton';
 import { Link } from 'react-router-dom';
-
+import { styled } from '@mui/material/styles';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 
 export default function CategoryTable() {
 
@@ -30,6 +30,25 @@ export default function CategoryTable() {
     }, [])
 
     
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+      [`&.${tableCellClasses.head}`]: {
+        backgroundColor: "#b4b4b4",
+        color: theme.palette.common.white,
+      },
+      [`&.${tableCellClasses.body}`]: {
+        fontSize: 14,
+      },
+    }));
+    
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+      '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+      },
+      // hide last border
+      '&:last-child td, &:last-child th': {
+        border: 0,
+      },
+    }));
 
 
   return (
@@ -44,29 +63,29 @@ export default function CategoryTable() {
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="caption table" >
         <TableHead>
-          <TableRow>
-          <TableCell align="center"><b>Category Id</b></TableCell>
-            <TableCell align="center"><b>Category Name</b></TableCell>
-            <TableCell align="center"><b>Category Type</b></TableCell>
-            <TableCell align="center"><b>Available Quantity</b></TableCell>
-            <TableCell align="center"><b>Total Quantity</b></TableCell>
-            <TableCell align="center"><b>Add Asset</b></TableCell>
-          </TableRow>
+          <StyledTableRow>
+          <StyledTableCell align="center"><b>Category Id</b></StyledTableCell>
+            <StyledTableCell align="center"><b>Category Name</b></StyledTableCell>
+            <StyledTableCell align="center"><b>Category Type</b></StyledTableCell>
+            <StyledTableCell align="center"><b>Available Quantity</b></StyledTableCell>
+            <StyledTableCell align="center"><b>Total Quantity</b></StyledTableCell>
+            <StyledTableCell align="center"><b>Add Asset</b></StyledTableCell>
+          </StyledTableRow>
         </TableHead>
         <TableBody>
           {categoryList.map((category) => (
             
-              <TableRow key={category.categoryId}>
+              <StyledTableRow key={category.categoryId}>
                 
-                <TableCell align="center">{category.categoryId}</TableCell>
-                <TableCell align="center">{category.categoryName}</TableCell>
-                <TableCell align="center">{category.categoryType}</TableCell>
-                <TableCell align="center">{category.availableQuantity}</TableCell>
-                <TableCell align="center">{category.totalQuantity}</TableCell>
+                <StyledTableCell align="center">{category.categoryId}</StyledTableCell>
+                <StyledTableCell align="center">{category.categoryName}</StyledTableCell>
+                <StyledTableCell align="center">{category.categoryType}</StyledTableCell>
+                <StyledTableCell align="center">{category.availableQuantity}</StyledTableCell>
+                <StyledTableCell align="center">{category.totalQuantity}</StyledTableCell>
           
                 <TableCell align="center"><Link to={`/add-asset/${category.categoryId}`}><SmallButton buttonText = "Add asset"/></Link></TableCell>
                 
-              </TableRow>
+              </StyledTableRow>
 
               
             

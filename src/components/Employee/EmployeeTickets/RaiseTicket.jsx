@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react'
 import '../EmployeeTickets/RaiseTicket.css'
 import AuthContext from '../../../context/AuthContext'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import RaiseTicketService from '../../../services/employeeService/RaiseTicketService'
+
 const RaiseTicket = () => {
 
     const[problemDescription,setProblemDescription]=useState('')
@@ -11,7 +12,7 @@ const RaiseTicket = () => {
     // const[employeeId,setEmployeeId]=useState(auth.employeeId)
 
    const{id}=useParams()
-
+    const navigate = useNavigate()
     const submitTicketDetails=(e)=>{
         e.preventDefault();
         // const tickets={ticketType,description}
@@ -26,6 +27,8 @@ const RaiseTicket = () => {
         RaiseTicketService.raiseTicket(auth.jwtToken,ticketRequestObj).then((response)=>{
             console.log("response-recieved from api",JSON.stringify(response))
             console.log("response",response.data)
+            navigate(-1)
+
         });
 
 

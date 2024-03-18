@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -14,12 +14,37 @@ import { useEffect } from 'react';
 import TicketService from '../../../services/ticket_service/TicketService';
 import './AllAssetRequestsTable.css'
 import SmallButton from '../small_button/SmallButton';
+import { styled } from '@mui/material/styles';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: "#b4b4b4",
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+
+
 export default function AllAssetRequestsTable() {
 
   const [activeAssetRequests, setActiveAssetRequests] = useState([])
 
   const { auth } = useContext(AuthContext)
   const [totalTickets, setTotalTickets] = useState(0)
+  const [approveRequestCalled, setApproveRequestCalled] = useState(false);
 
   useEffect(() => {
     const fetchActiveAssetRequests = async () => {
@@ -35,7 +60,27 @@ export default function AllAssetRequestsTable() {
     };
 
     fetchActiveAssetRequests();
-  }, [auth.jwtToken]);
+  }, [auth.jwtToken, approveRequestCalled]);
+
+  function approveRequest(ticketId) {
+
+    TicketService.approveRequest(ticketId, auth.jwtToken).then((response) => {
+      console.log("response of approve request: ", response.data)
+      setApproveRequestCalled(true);
+    })
+      .catch(error => {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
+  }
 
 
   return (
@@ -50,32 +95,29 @@ export default function AllAssetRequestsTable() {
         <Table sx={{ minWidth: 650 }} aria-label="caption table" >
           <TableHead>
             <TableRow>
-              <TableCell align="center"><b>Ticket Id</b></TableCell>
-              <TableCell align="center"><b>Requested Asset</b></TableCell>
-              <TableCell align="center"><b>Model</b></TableCell>
-              <TableCell align="center"><b>Category</b></TableCell>
-              <TableCell align="center"><b>Reason For Request</b></TableCell>
-              <TableCell align="center"><b>Requested By</b></TableCell>
-              <TableCell align="center"><b>Approve</b></TableCell>
+              <StyledTableCell align="center"><b>Ticket Id</b></StyledTableCell>
+              <StyledTableCell align="center"><b>Requested Asset</b></StyledTableCell>
+              <StyledTableCell align="center"><b>Model</b></StyledTableCell>
+              <StyledTableCell align="center"><b>Category</b></StyledTableCell>
+              <StyledTableCell align="center"><b>Reason For Request</b></StyledTableCell>
+              <StyledTableCell align="center"><b>Requested By</b></StyledTableCell>
+              <StyledTableCell align="center"><b>Approve</b></StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {activeAssetRequests.map((req) => (
-              <TableRow key={req.ticketId}>
-                <TableCell align="center">{req.ticketId}</TableCell>
-                <TableCell align="center">{req.asset.category.categoryName}</TableCell>
-                <TableCell align="center">{req.asset.model}</TableCell>
-                <TableCell align="center">{req.asset.category.categoryType}</TableCell>
-                <TableCell align="center">{req.problemDescription}</TableCell>
-                <TableCell align="center">{req.employee.firstName + " " + req.employee.lastName}</TableCell>
-                <TableCell align="center"><SmallButton buttonText="APPROVE"/></TableCell>
-              </TableRow>
+              <StyledTableRow key={req.ticketId}>
+                <StyledTableCell align="center">{req.ticketId}</StyledTableCell>
+                <StyledTableCell align="center">{req.asset.category.categoryName}</StyledTableCell>
+                <StyledTableCell align="center">{req.asset.model}</StyledTableCell>
+                <StyledTableCell align="center">{req.asset.category.categoryType}</StyledTableCell>
+                <StyledTableCell align="center">{req.problemDescription}</StyledTableCell>
+                <StyledTableCell align="center">{req.employee.firstName + " " + req.employee.lastName}</StyledTableCell>
+                <StyledTableCell align="center"><SmallButton buttonText="APPROVE" onClick={() => approveRequest(req.ticketId)} /></StyledTableCell>
+              </StyledTableRow>
             ))}
           </TableBody>
         </Table>
-        <div style={{ display: "flex", justifyContent: "center", padding: "10px" }}>
-          {/* <Button  type="submit" color="primary" sx={ { borderRadius: 0, color: 'black', backgroundColor: "#b4b4b4"} }>Create new category</Button> */}
-        </div>
       </TableContainer>
     </div>
   );
