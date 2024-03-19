@@ -58,6 +58,7 @@ const RaiseTicket = () => {
         <select className="form-select" aria-label="Default select example" value={ticketType} onChange={(e) => setTicketType(e.target.value)}>
   <option selected>Select Ticket type</option>
   <option value="ISSUE">ISSUE</option>
+  <option value="RETURN">RETURN</option>
 </select>
       </div>
       {/* <div className="formbold-mb-5">

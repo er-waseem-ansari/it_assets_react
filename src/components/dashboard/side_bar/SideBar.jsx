@@ -38,7 +38,7 @@ const SideBar = () => {
       <a href="#"><CategoryIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clients</a><br />
       <a href="#"><ContactPageIcon/><span className="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact</a>
       <Link to={'/auth'}><button onClick={logout}>Logout</button></Link>
-      <Link to={"/show"}>Available assets</Link>
+      <Link to={"/issue-asset"}>Assigned</Link>
       <Link to={"/category"}>Category</Link>
     </div>
   );
