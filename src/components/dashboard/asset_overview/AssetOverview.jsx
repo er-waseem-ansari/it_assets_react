@@ -29,7 +29,7 @@ function AssetOverview() {
           <span>Active Tickets <br /> 12 </span>
         </div>
       </div>
-      <Link to={'/raise-ticket'}><div className="raise-new-ticket" style={{textDecoration: 'none'}}>+ Raise A New Ticket</div></Link>
+      <Link to={'/category'}><div className="raise-new-ticket" style={{textDecoration: 'none'}}>+ Raise A New Ticket</div></Link>
       <div className='return-issue'>
         <span>Return Issued Assets</span>
         

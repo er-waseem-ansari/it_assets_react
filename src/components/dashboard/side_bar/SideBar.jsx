@@ -42,7 +42,7 @@ const SideBar = () => {
 
       <Link to={auth.role === "ADMIN"? '/admin' : '/employee'} > <HomeIcon sx={{fontSize: 30}}/> <span>&nbsp;&nbsp;&nbsp;Home</span></Link><br />
       <Link to={auth.role === "ADMIN"? '/categories' : '/category'} ><WidgetsIcon/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Categories</Link><br />
-      <Link to={'/all-active-tickets'}><ConfirmationNumberIcon/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tickets</Link><br />
+      <Link to={'/all-active-tickets'}><ConfirmationNumberIcon/> &nbsp;&nbsp;&nbsp;&nbsp;Tickets</Link><br />
       <Link to={'/issue-asset'}><ChecklistRtlIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Issued Assets</Link>
       <Link to={'/auth'}><LogoutIcon /> <button onClick={logout} style={{marginTop: "200px", textDecoration: 'none', border: "0px", color: "grey"}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout</button></Link>
     </div>
