@@ -16,6 +16,8 @@ import AllAssetRequestsTable from "./components/dashboard/all_asset_requests_tab
 import AddAsset from "./components/dashboard/add_asset/AddAsset";
 import AllActiveTickets from "./components/dashboard/all_active_tickets/AllActiveTickets";
 import RaiseAllTicket from "./components/dashboard/raise_ticket/RaiseAllTicket";
+import { elements } from "chart.js";
+import IssuedAsset from "./components/Employee/IssueAsset/IssuedAsset";
 
 function App() {
   const router = createBrowserRouter([
@@ -62,7 +64,10 @@ function App() {
         {
           path: 'raise-ticket',
           element: <RaiseAllTicket/>
-
+        },
+        {
+        path:'issue-asset',
+        element:<IssuedAsset/>
         }
         
       ]
