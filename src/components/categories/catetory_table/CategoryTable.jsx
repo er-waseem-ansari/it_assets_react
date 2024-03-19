@@ -56,7 +56,7 @@ export default function CategoryTable() {
       <h3>Categories</h3>
       <div style={{ display:"flex", justifyContent: "space-between", marginBottom: "5px"}}>
       <p>(Select a category to add assets)</p>
-        <SmallButton buttonText="Create New Category"/>
+        <Link to={'/create-category'}> <SmallButton buttonText="Create New Category"/> </Link>
       </div>
     
     

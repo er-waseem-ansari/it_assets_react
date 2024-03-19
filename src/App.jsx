@@ -18,6 +18,7 @@ import AllActiveTickets from "./components/dashboard/all_active_tickets/AllActiv
 import RaiseAllTicket from "./components/dashboard/raise_ticket/RaiseAllTicket";
 import { elements } from "chart.js";
 import IssuedAsset from "./components/Employee/IssueAsset/IssuedAsset";
+import CreateCategory from "./components/categories/create_category/CreateCategory";
 
 function App() {
   const router = createBrowserRouter([
@@ -63,11 +64,15 @@ function App() {
         },
         {
           path: 'raise-ticket',
-          element: <RaiseAllTicket/>
+          element: <RaiseAllTicket />
         },
         {
         path:'issue-asset',
-        element:<IssuedAsset/>
+        element:<IssuedAsset />
+        },
+        {
+          path: 'create-category',
+          element: <CreateCategory />
         }
         
       ]
