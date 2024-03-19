@@ -4,11 +4,11 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import './AssetOverview.css'
 import AuthContext from '../../../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 
 function AssetOverview() {
   const {auth} = useContext(AuthContext)
-  useEffect
 
 
   return (
@@ -29,9 +29,10 @@ function AssetOverview() {
           <span>Active Tickets <br /> 12 </span>
         </div>
       </div>
-      <div className="raise-new-ticket">+ Raise A New Ticket</div>
+      <Link to={'/raise-ticket'}><div className="raise-new-ticket" style={{textDecoration: 'none'}}>+ Raise A New Ticket</div></Link>
       <div className='return-issue'>
         <span>Return Issued Assets</span>
+        
         <span>Issue A New Asset</span>
       </div>
     </div>

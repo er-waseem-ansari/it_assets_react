@@ -42,8 +42,8 @@ export const AuthPage = () => {
 
     toast.configure;
     const notify = () => toast.success("Account creation successful! Please Login", { autoClose: 3000 });
-    const invalidCredentialsToast = () => toast.success("Invalid Credentials!", { autoClose: 3000 });
-    const internetIssueToast = () => toast.success("Please connect to internet first", { autoClose: 3000 });
+    const invalidCredentialsToast = () => toast.error("Invalid Credentials!", { autoClose: 3000 });
+    const internetIssueToast = () => toast.error("Please connect to internet first", { autoClose: 3000 });
     useEffect(() => {
         if (firstName.length > 2 || firstName.length == 0) {
             setIsFirstNameValid(true);

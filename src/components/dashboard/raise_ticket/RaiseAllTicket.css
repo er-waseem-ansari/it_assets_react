@@ -1,0 +1,10 @@
+.raise-all-ticket-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.raise-all-ticket-form-container{
+    margin-top: 150px;
+    width: 250px;
+}

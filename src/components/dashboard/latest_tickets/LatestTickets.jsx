@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './LatestTickets.css'
 import AuthContext from '../../../context/AuthContext'
 import TicketService from '../../../services/ticket_service/TicketService'
+import { Link } from 'react-router-dom'
 function LatestTickets() {
 
     const [ticketList, setTicketList] = useState([])
@@ -50,7 +51,9 @@ function LatestTickets() {
                 ))
             }
 
-            <button className='admin-dltb'>View All Tickets</button>
+            <Link to={'/all-active-tickets'} style={{ textDecoration: 'none', width: '100%', display: 'inline-block' }}>
+                <button className='admin-dltb' style={{ width: '100%' }}>View All Tickets</button>
+            </Link>
         </div>
     )
 }

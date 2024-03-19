@@ -14,6 +14,8 @@ import RaiseTicket from "./components/Employee/EmployeeTickets/RaiseTicket";
 import EmployeeHome from "./components/dashboard/employee_home/EmployeeHome";
 import AllAssetRequestsTable from "./components/dashboard/all_asset_requests_table/AllAssetRequestsTable";
 import AddAsset from "./components/dashboard/add_asset/AddAsset";
+import AllActiveTickets from "./components/dashboard/all_active_tickets/AllActiveTickets";
+import RaiseAllTicket from "./components/dashboard/raise_ticket/RaiseAllTicket";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +54,15 @@ function App() {
         {
           path: 'add-asset/:categoryId',
           element: <AddAsset/>
+        },
+        {
+          path: 'all-active-tickets',
+          element: <AllActiveTickets/>
+        },
+        {
+          path: 'raise-ticket',
+          element: <RaiseAllTicket/>
+
         }
         
       ]
