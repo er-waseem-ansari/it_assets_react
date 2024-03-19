@@ -10,6 +10,8 @@ class IssueAssetService{
         }
         return (axios.get(BASE_REST_URL+'/'+id,{headers}));
     }
+
+    
 }
 
 export default new IssueAssetService();
